@@ -1,0 +1,22 @@
+[
+  {
+   "id": 1,
+   "name": "Olakunle Jamal",
+   "company": "8th Gear Venture Studios",
+   "phone": "08128910425" 
+  },
+
+  {
+    "id": 2,
+    "name": "Safiu Oluwole",
+    "company": "Safiu Designs",
+    "phone": "08122867938"
+  },
+
+  {
+    "id": 3,
+    "name": "segun Olagunju",
+    "company": "Soft-shop",
+    "phone":"08025171496"
+  }
+]
