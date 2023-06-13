@@ -21,6 +21,13 @@ numbers[2] = 100;
 // Find the index of value
 val = numbers.indexOf(36);
 
+// Reduce method
+const addNumbers = numbers.reduce((total, number) => {
+  return total + number
+}, 0);
+
+console.log(addNumbers);
+
 // // MUTATING arrays
 // // Add on to end
 // numbers.push(250);
