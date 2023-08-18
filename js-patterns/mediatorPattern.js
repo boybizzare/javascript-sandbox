@@ -1,0 +1,46 @@
+// the mediator allows you to define an object (the mediator) that encapsulatesa and controls how the other set of objects communicate and interact with each other
+
+
+class Member {
+  constructor(name) {
+    this.name = name;
+    this.chatroom = null;
+  }
+
+  send(message, toMember) {
+    this.chatroom.send(message, this, toMember);
+  }
+
+  receive(message, fromMember) {
+    console.log(`${fromMember.name} to ${this.name}: ${message}`);
+  }
+}
+
+class Chatroom {
+  constructor() {
+    this.members = {};
+  }
+
+  addMember(member) {
+    this.members[member.name] = member;
+    member.chatroom = this;
+  }
+
+  send(message, fromMember, toMember) {
+    toMember.receive(message, fromMember);
+  }
+}
+
+const chat = new Chatroom();
+
+const bob = new Member('Bob');
+const john = new Member('John');
+const tim = new Member('Tim');
+
+chat.addMember(bob);
+chat.addMember(john);
+chat.addMember(tim);
+
+bob.send('Hey, John', john);
+john.send("What's up, Bob?", bob);
+tim.send('Are you okay?', john);
